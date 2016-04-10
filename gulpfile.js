@@ -2,8 +2,10 @@
 
 const atRoot = require('postcss-atroot');
 const babel = require('gulp-babel');
+const babelify = require("babelify");
 const browserify = require('browserify');
 const browserSync = require('browser-sync').create();
+const buffer = require('vinyl-buffer');
 const clearFix = require('postcss-clearfix');
 const colorShort = require('postcss-color-short');
 const cssMqpacker = require('css-mqpacker');
@@ -32,9 +34,6 @@ gulp.task('default', ['server'], () => {
   });
   gulp.watch('src/css/**', (event) => {
     gulp.run('css');
-  });
-  gulp.watch('src/jsx/**', (event) => {
-    gulp.run('jsx');
   });
   gulp.watch('src/js/**', (event) => {
     gulp.run('js');
@@ -78,11 +77,11 @@ gulp.task('postcss', () => {
 
 // JavaScript
 
-gulp.task('jsx', () => {
+gulp.task('js', () => {
   var bundler = browserify({
-    entries: ['./src/jsx/App.jsx'],
-    transform: [reactify],
-    extensions: ['.jsx'],
+    entries: ['./src/js/App.js'],
+    transform: [babelify, reactify],
+    extensions: ['.js'],
     debug: true,
     cache: {},
     packageCache: {},
@@ -95,18 +94,13 @@ gulp.task('jsx', () => {
       .bundle()
       .on('error', gutil.log.bind(gutil, 'Browserify Error'))
       .pipe(source('main.js'))
-      .pipe(gulp.dest('./src/js/'));
+      .pipe(buffer())
   };
-  build();
-  bundler.on('update', build);
-});
-
-gulp.task('js', () => {
-  gulp.src('src/js/main.js')
-  .pipe(babel())
+  build()
   .pipe(uglify())
-  .pipe(gulp.dest('dist/js'))
-  .pipe(browserSync.stream());
+  .pipe(gulp.dest('./dist/js/'))
+  .pipe(browserSync.stream())
+  bundler.on('update', build);
 });
 
 // Server
