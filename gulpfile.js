@@ -64,7 +64,7 @@ gulp.task('postcss', () => {
     clearFix,
     px2Rem,
     cssNext({
-      autoprefixer: 'ie >= 7, last 10 versions, > 1%'
+      autoprefixer: ['ie >= 7', 'last 10 versions', '> 1%']
     }),
     cssMqpacker,
     cssSorter,
@@ -80,7 +80,7 @@ gulp.task('postcss', () => {
 
 gulp.task('jsx', () => {
   var bundler = browserify({
-    entries: ['./src/jsx/app.jsx'],
+    entries: ['./src/jsx/App.jsx'],
     transform: [reactify],
     extensions: ['.jsx'],
     debug: true,
