@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import Header from './Header'
 import Main from './Main'
@@ -16,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-React.render(<App />, document.querySelector('.app'))
+ReactDOM.render(<App />, document.querySelector('.app'))
