@@ -2,6 +2,7 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 0.0 General
 1.0 Normalize
+2.0 Header
 */
 
 
@@ -139,4 +140,15 @@ textarea {
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+/* 2.0 Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+header {
+  min-height: 300px;
+    min-height: 100px;
+  background-image: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
