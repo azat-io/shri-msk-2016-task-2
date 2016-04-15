@@ -6,7 +6,7 @@
 3.0 Main
 3.1 Groups
 3.2 Cards
-3.3 Drag and Drop
+4.0 Footer
 */
 
 
@@ -108,7 +108,7 @@ h1 {
 
 h2 {
   text-align: center;
-  margin: 60px 0 25px 0;
+  margin: 0;
 }
 
 img {
@@ -299,4 +299,51 @@ main {
 .gu-transit {
   opacity: .2;
   filter:alpha(opacity=20)
+}
+
+/* 4.0 Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+footer hr {
+  height: 3px;
+  background-image: repeating-linear-gradient(90deg, var(--red) 0px, var(--red) 60px, var(--blue) 61px, var(--blue) 120px, var(--green) 121px, var(--green) 180px, var(--yellow) 181px, var(--yellow) 240px);
+  border-color: transparent;
+  margin: 10px 0;
+}
+
+footer {
+  color: #35;
+  margin: 20px auto;
+  padding: 10px 15px;
+  clear: fix-legacy;
+  @media (width >= 990px) {
+    width: 970px;
+  }
+  @media (width >= 1200px) {
+    width: 1170px;
+  }
+}
+
+footer p a {
+  transition: color 0.3s ease;
+}
+
+footer p a:hover {
+  color: var(--red);
+}
+
+footer p a:active {
+  color: inherit;
+}
+
+.github-link {
+  float: left;
+}
+
+.special {
+  float: right;
+}
+
+.yandex {
+  color: var(--red);
 }

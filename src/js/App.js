@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 
 import Header from './Header/Header'
 import Main from './Main/Main'
-import Footer from './Footer'
+import Footer from './Footer/Footer'
 
 class App extends React.Component {
   render() {
