@@ -1,6 +1,5 @@
 'use strict';
 
-const atRoot = require('postcss-atroot');
 const babel = require('gulp-babel');
 const babelify = require("babelify");
 const browserify = require('browserify');
@@ -16,6 +15,7 @@ const focus = require('postcss-focus');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const inlineImg = require('postcss-inline-image');
+const nested = require('postcss-nested');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 const px2Rem = require('postcss-pxtorem');
@@ -55,7 +55,7 @@ gulp.task('pug', () => {
 
 gulp.task('postcss', () => {
   const processors = [
-    atRoot,
+    nested,
     colorShort,
     focus,
     size,
