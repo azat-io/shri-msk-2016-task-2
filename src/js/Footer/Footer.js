@@ -5,6 +5,8 @@ import React from 'react'
 class Footer extends React.Component {
   render() {
     return <footer>
+      <p className='thanks'>That's all!</p>
+      <p className='thanks'>Thank you for your attention!</p>
       <hr />
       <p className='github-link'>
         <a href='https://github.com/azat-io/shri-msk-2016-task-2' target='_blank'>Look at GitHub</a>
