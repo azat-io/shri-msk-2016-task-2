@@ -103,7 +103,7 @@ gulp.task('js', () => {
   bundler.on('update', build);
 });
 
-// Image
+// Images
 
 gulp.task('images', function(cb) {
   gulp.src(['src/images/**/*'])
@@ -113,6 +113,17 @@ gulp.task('images', function(cb) {
     interlaced: true
   }))
   .pipe(gulp.dest('dist/images')).on('end', cb).on('error', cb);
+});
+
+// Moving
+
+gulp.task('move', () => {
+  const filesToMove = [
+    './src/fonts/**/*.*',
+    './src/favicon.ico'
+  ];
+  gulp.src(filesToMove, { base: './src/' })
+  .pipe(gulp.dest('./dist/'));
 });
 
 // Server
