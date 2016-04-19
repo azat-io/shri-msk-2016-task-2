@@ -14,6 +14,7 @@ const cssSorter = require('css-declaration-sorter');
 const focus = require('postcss-focus');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
+const imageOp = require('gulp-image-optimization');
 const inlineImg = require('postcss-inline-image');
 const nested = require('postcss-nested');
 const postcss = require('gulp-postcss');
@@ -105,7 +106,7 @@ gulp.task('js', () => {
 
 // Images
 
-gulp.task('images', function(cb) {
+gulp.task('images', (cb) => {
   gulp.src(['src/images/**/*'])
   .pipe(imageOp({
     optimizationLevel: 5,
