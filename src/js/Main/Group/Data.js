@@ -95,7 +95,7 @@ const students = [
   {
     'firstName': 'Bebe',
     'lastName': 'Stevens',
-    'role': 'Economist',
+    'role': 'Accountant',
     'photo': '../images/students/bebe.jpg',
     'defaultTeam': 'yellow'
   },
