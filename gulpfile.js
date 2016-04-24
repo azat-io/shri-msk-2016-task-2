@@ -33,12 +33,13 @@ gulp.task('default', ['server'], () => {
   gulp.watch('src/postcss/**', (event) => {
     gulp.run('postcss');
   });
-  gulp.watch('src/css/**', (event) => {
-    gulp.run('css');
-  });
   gulp.watch('src/js/**', (event) => {
     gulp.run('js');
   });
+});
+
+gulp.task('build', () => {
+  gulp.run('pug', 'postcss', 'js', 'images', 'move');
 });
 
 // Pug
