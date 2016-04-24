@@ -2,15 +2,15 @@
 
 import React from 'react'
 
-import Group from './Group/Group'
+import Introduction from './Intro/Introduction'
 import Exam from './Task/Exam'
-
-import students from './Group/Data'
+import Classroom from './Group/Classroom'
 
 class Main extends React.Component {
   render() {
     return <main>
-      <Group students={students} />
+      <Introduction />
+      <Classroom />
       <Exam />
     </main>
   }
