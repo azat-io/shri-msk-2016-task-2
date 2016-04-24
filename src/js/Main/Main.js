@@ -9,6 +9,7 @@ import Classroom from './Group/Classroom'
 class Main extends React.Component {
   render() {
     return <main>
+      <h1>Welcome back to School!</h1>
       <Introduction />
       <Classroom />
       <Exam />
