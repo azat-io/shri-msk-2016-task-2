@@ -20,7 +20,7 @@ class TaskBox extends React.Component {
     this.setState({data: newComments})
   }
   render () {
-    return <div className='comment-box'>
+    return <div>
       <TaskForm
         data={this.props.data}
         onCommentSubmit={this.handleCommentSubmit.bind(this)}
