@@ -187,6 +187,10 @@ main {
   }
 }
 
+h1 {
+  margin: 10px 0 20px 0;
+}
+
 /* 3.1 Introduction
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -200,13 +204,31 @@ main {
   align-items: flex-start;
   img {
     max-width: calc(var(--fullWidth)/12*5);
+    border-radius: 15px;
+    @media (width <= 1199px) {
+      max-width: calc(var(--fullWidth)/12*5.5);
+    }
+    @media (width <= 950px) {
+      max-width: 100%;
+      display: block;
+      margin: auto;
+    }
   }
   div {
     font-size: 17px;
+    padding-left: 20px;
     text-align: justify;
     max-width: calc(var(--fullWidth)/12*6.6);
+    @media (width <= 1199px) {
+      font-size: 16px;
+    }
+    @media (width <= 950px) {
+      font-size: 18px;
+      max-width: var(--fullWidth);
+      margin: 20px;
+    }
   }
-  @media (width <= 1199px) {
+  @media (width <= 950px) {
     flex-wrap: wrap;
   }
 }
@@ -312,6 +334,7 @@ main {
 
 .card-photo {
   max-width: 108px;
+  size: 108px;
   padding: 5px;
   position: relative;
   float: left;
@@ -320,6 +343,7 @@ main {
 .card-photo img {
   border-radius: 50%;
   margin: 5px 0 4px 0;
+  size: 95px;
 }
 
 .card-header {
