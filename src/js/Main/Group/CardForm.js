@@ -70,6 +70,7 @@ class CardForm extends React.Component {
             <input type='text' required placeholder='Role in project' />
             <input type='text' required placeholder='Photo' />
             <select>
+              <option value='' disabled selected hidden>Select team</option>
               <option value='red'>Red</option>
               <option value='blue'>Blue</option>
               <option value='green'>Green</option>

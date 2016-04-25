@@ -8,7 +8,7 @@ class Classroom extends React.Component {
   render () {
     return <div>
       <h2>Classroom</h2>
-      <Group students={students} />
+      <Group data={students} />
     </div>
   }
 }
